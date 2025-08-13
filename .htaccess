@@ -1,0 +1,13 @@
+RewriteEngine On
+RewriteBase /
+
+# Перенаправление всех запросов на public/index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public/index.php?url=$1 [QSA,L]
+
+# Защита от доступа к скрытым файлам
+<FilesMatch "\.(env|config|log)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
