@@ -1,5 +1,5 @@
 <?php
-$authController = new App\Controllers\AuthController();
+$authController = new src\Controllers\AuthController();
 $csrfToken = $authController->generateCsrfToken();
 ?>
 

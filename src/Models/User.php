@@ -1,7 +1,7 @@
 <?php
-namespace App\Models;
+namespace src\Models;
 
-use App\Models\Database;
+use src\Models\Database;
 
 class User {
     private $db;

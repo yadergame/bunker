@@ -1,8 +1,8 @@
 <?php
-namespace App\Controllers;
+namespace src\Controllers;
 
-use App\Models\User;
-use App\Models\Database;
+use src\Models\User;
+use src\Models\Database;
 
 class AuthController {
     private $userModel;

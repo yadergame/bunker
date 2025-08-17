@@ -1,33 +1,37 @@
 <?php
-require '../app/config/config.php';
+require '../src/config/config.php';
 
 // Маршрутизация
 $request = $_SERVER['REQUEST_URI'];
+echo str_replace("/public","",$request);
 
-switch ($request) {
+switch (str_replace("/public","",$request)) {
     case '/':
     case '/home':
-        $controller = new App\Controllers\HomeController();
+        echo'0';
+        $controller = new src\Controllers\HomeController();
+        echo "1";
         $controller->index();
+        echo "2";
         break;
     case '/login':
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $controller = new App\Controllers\AuthController();
+            $controller = new src\Controllers\AuthController();
             $controller->login();
         } else {
-            require '../app/views/auth/login.php';
+            require '../src/views/auth/login.php';
         }
         break;
     case '/register':
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $controller = new App\Controllers\AuthController();
+            $controller = new src\Controllers\AuthController();
             $controller->register();
         } else {
-            require '../app/views/auth/register.php';
+            require '../src/views/auth/register.php';
         }
         break;
     case '/logout':
-        $controller = new App\Controllers\AuthController();
+        $controller = new src\Controllers\AuthController();
         $controller->logout();
         break;
     default:

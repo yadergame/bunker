@@ -12,6 +12,18 @@ session_start([
 
 // Автозагрузчик классов
 spl_autoload_register(function ($class) {
-    require str_replace('\\', '/', $class) . '.php';
+    // Преобразуем namespace в путь к файлу
+    $file = str_replace("src\config","",__DIR__). str_replace('\\', '/', $class) . '.php';
+    
+    if (file_exists($file)) {
+        require $file;
+    } else {
+        // Выводим отладочную информацию
+        die("Автозагрузка: файл не найден - " . $file . 
+            "<br>Проверьте:<br>" .
+            "1. Существует ли файл<br>" .
+            "2. Совпадает ли регистр букв<br>" .
+            "3. Правильно ли указан namespace в классе");
+    }
 });
 ?>  
