@@ -8,7 +8,7 @@ class HomeController {
             header('Location: /login');
             exit;
         }
-        require '../views/home.php';
+        require str_replace("\Controllers","",__DIR__)."/Views/home.php";
     }
 }
 ?>

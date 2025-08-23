@@ -1,6 +1,6 @@
 <?php
 return [
-    'host' => 'localhost',
+    'host' => '127.0.0.1',
     'dbname' => 'bunker',
     'username' => 'asupb',
     'password' => '1234',

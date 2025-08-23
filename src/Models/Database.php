@@ -3,6 +3,7 @@ namespace src\Models;
 
 use PDO;
 use PDOException;
+use PSpell\Config;
 
 class Database {
     private static $instance = null;
@@ -12,7 +13,8 @@ class Database {
         $config = require __DIR__ . '/../config/database.php';
         
         try {
-            $dsn = "mysql:host={$config['host']};dbname={$config['dbname']};charset={$config['charset']}";
+            
+            $dsn = "mysql:host={$config['host']};dbname={$config['dbname']}";
             $this->connection = new PDO(
                 $dsn,
                 $config['username'],
