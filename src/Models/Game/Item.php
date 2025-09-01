@@ -12,7 +12,8 @@ class Item
     {
         $this->ID = $id;
         $this->Name = $name;
-        $this->Valeu = $value;
+        if($value>=0)$this->Valeu = $value;
+        else throw new Exception("Количество не может быть отрицательным");
     }
     static public function Sum(Item $item1,Item $item2):Item
     {
