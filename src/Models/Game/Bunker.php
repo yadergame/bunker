@@ -4,7 +4,7 @@ use src\Models\Game\Coordination;
 use src\Models\Game\Item;
 
 class Bunker{
-    public Item $storage=[];
+    public $storage=[];
     public $Roomstorage=[];
     public int $food;
     public int $people;
