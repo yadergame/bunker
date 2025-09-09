@@ -1,5 +1,5 @@
 <?php
-    namespace Test;
+    namespace tests\Models\Game;
     use PHPUnit\Framework\TestCase;
     use src\Models\Game\Item;
     class ItemTest extends TestCase
