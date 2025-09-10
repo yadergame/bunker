@@ -1,1 +1,1 @@
-{"version":2,"defects":{"Test\\ItemTest::testSum":7},"times":{"Test\\ItemTest::testSum":0.002}}
+{"version":2,"defects":{"Test\\ItemTest::testSum":7,"tests\\Models\\Game\\ItemTest::testSum":8},"times":{"Test\\ItemTest::testSum":0.002,"tests\\Models\\Game\\ItemTest::testSum":0.004}}

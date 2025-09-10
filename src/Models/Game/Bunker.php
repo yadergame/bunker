@@ -40,7 +40,9 @@ class Bunker{
     }
     public function HaveCountItem(string $NameItem,int $count):bool
     {
-        return $this->HaveItem($NameItem)&& $this->storage[$NameItem]->Value>=$count;
+        $More=$this->storage[$NameItem]->Value>=$count;
+        $result=$More&& $this->HaveItem($NameItem);
+        return $result;    
     }
     public function AddRome(Room $room)
     {
@@ -49,7 +51,6 @@ class Bunker{
     public function WorkInStorage()
     {
         $this->food+=$this->PeopleInStorage*2;
-        
     }
     public function EatFood()
     {
